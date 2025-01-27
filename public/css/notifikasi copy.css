@@ -1,0 +1,445 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container{
+    display: flex;
+    background-color: rgb(214,214, 214);
+}
+
+.dashboard-container.sidebar-collapsed .admin-info {
+    left: 0; /* Membuat admin-info mulai dari tepi kiri jendela */
+    width: 100%; /* Lebar penuh */
+}
+
+.dashboard-container.sidebar-collapsed .main-content {
+    margin-left: 0; /* Menghapus margin kiri */
+    width: 100%; /* Lebar penuh */
+}
+
+.toggle-sidebar {
+    font-size: 1.5rem; /* Sesuaikan ukuran ikon */
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.sidebar-collapsed .sidebar {
+    transform: translateX(-250px); /* Sembunyikan sidebar */
+}
+
+.sidebar-collapsed .admin-info {
+    left: 0; /* Pindahkan admin-info ke ujung kiri jendela */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+}
+
+.sidebar-header-judul {
+    background-color: #4a9fff;
+    width: 105%; /* Lebar penuh mengikuti sidebar */
+    height: 61px; /* Tinggi yang sama dengan admin-info */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Rata tengah secara horizontal */
+    font-weight: bold;
+    border-bottom: 1px solid #ddd; 
+}
+
+.sidebar-header-judul p {
+    margin-top: 20px;
+    color: white;
+}
+
+.sidebar-header {
+    padding: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sidebar-header p{
+    font-size: 15px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item span {
+    padding-left: 10px; 
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #f0ad4e;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: block;
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu a {
+    padding: 10px 30px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-item.active-page,
+.submenu-item.active-submenu {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px; 
+    background-color: #ececec;
+    /* overflow: hidden; */
+}
+
+.submenu.show {
+    display: block;
+}
+
+.container-fluid {
+    padding-bottom: 0; 
+    margin-bottom: 0; 
+}
+
+.main-content {
+    margin-left: 250px;
+    margin-top: 40px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 89px);
+    transition: margin-left 0.3s ease;
+}
+
+.main-header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+    font-size: 1rem; 
+    margin: 0; 
+}
+
+.admin-info {
+    background-color: #4a9fff ;
+    position: fixed;
+    top: 0;
+    left: 250px; 
+    right: 0; 
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.admin-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.toggle-sidebar {
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+.right-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; 
+}
+
+.bi-person-fill {
+    color: white;
+    font-size: 30px;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: inherit; 
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.notif {
+    color: #fff;
+    font-size: 1.2em; 
+    text-decoration: none;
+}
+
+/* Styling for main content area on the notification page */
+.main-content {
+    margin-left: 250px;
+    margin-top: 40px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 89px);
+    transition: margin-left 0.3s ease;
+}
+
+.main-header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container-fluid {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    position: relative;
+    padding-bottom: 0px;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; 
+}
+
+.card-header .card-title {
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.card-body .form-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card-name {
+    margin-top: 100px;
+    text-decoration: none;
+}
+
+/* Notification list items */
+.large-checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.list-group-item.notification {
+    display: flex;
+    align-items: center; 
+    padding: 10px 15px; 
+    background-color: #f8f9fa; 
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+    gap: 10px; 
+}
+
+.list-group-item.notification:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item.notification.unread {
+    font-weight: bold;
+    background-color: white;
+}
+
+.list-group-item.notification.read {
+    font-weight: normal;
+    background-color: #f8f9fa;
+}
+
+.list-group-item.notification.selected {
+    background-color: #d0e7ff;
+}
+
+/* Badge styling */
+.list-group-item .badge {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.list-group-item .badge.bg-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.list-group-item .badge.bg-warning {
+    background-color: #f0ad4e;
+    color: black;
+}
+
+.list-group-item .badge.bg-success {
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Nama pengirim */
+.sender-name {
+    font-size: 0.9rem;
+    color: #555;
+    margin-right: 10px; 
+    flex: 1; 
+    min-width: 100px;
+}
+
+.status {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #007bff; 
+    margin-right: 10px;
+    flex: 0.5; 
+    text-align: center; 
+}
+
+.message-content {
+    font-size: 0.9rem;
+    color: #444;
+    flex: 3; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin-right: 10px; 
+}
+
+/* Waktu di sisi kanan */
+.time {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: auto; 
+    text-align: right; 
+    flex: 1; 
+}
+
+/* Checkbox styling */
+.list-group-item.notification input[type="checkbox"] {
+    pointer-events: auto;
+    z-index: 1;
+    margin-right: 15px;
+}
+
+/* Link untuk notifikasi */
+.notification-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.notification-link:hover {
+    text-decoration: none;
+}
+
+/* Tombol hapus */
+.btn-red {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+    background-color: #bb0000;
+}
+
+.custom-btn {
+    background-color: rgb(221, 221, 221);
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 4px;
+    padding: 7px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    accent-color: black;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.custom-chevron {
+    color: black;
+    font-size: 1rem;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #4a9fff ;
+    color: #ffffff;             
+    text-align: center;       
+    padding: 5px 0;          
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd; 
+}

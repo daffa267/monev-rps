@@ -1,0 +1,208 @@
+/* notifikasi.css */
+
+/* Styling for main content area on the notification page */
+.main-content {
+    margin-left: 250px;
+    margin-top: 40px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 89px);
+    transition: margin-left 0.3s ease;
+}
+
+.main-header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container-fluid {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    position: relative;
+    padding-bottom: 0px;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; 
+}
+
+.card-header .card-title {
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.card-body .form-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card-name {
+    margin-top: 100px;
+    text-decoration: none;
+}
+
+/* Notification list items */
+.large-checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.list-group-item.notification {
+    display: flex;
+    align-items: center; 
+    padding: 10px 15px; 
+    background-color: #f8f9fa; 
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+    gap: 10px; 
+}
+
+.list-group-item.notification:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item.notification.unread {
+    font-weight: bold;
+    background-color: white;
+}
+
+.list-group-item.notification.read {
+    font-weight: normal;
+    background-color: #f8f9fa;
+}
+
+.list-group-item.notification.selected {
+    background-color: #d0e7ff;
+}
+
+/* Badge styling */
+.list-group-item .badge {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.list-group-item .badge.bg-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.list-group-item .badge.bg-warning {
+    background-color: #f0ad4e;
+    color: black;
+}
+
+.list-group-item .badge.bg-success {
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Nama pengirim */
+.sender-name {
+    font-size: 0.9rem;
+    color: #555;
+    margin-right: 10px; 
+    flex: 1; 
+    min-width: 100px;
+}
+
+.status {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #007bff; 
+    margin-right: 10px;
+    flex: 0.5; 
+    text-align: center; 
+}
+
+.message-content {
+    font-size: 0.9rem;
+    color: #444;
+    flex: 3; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin-right: 10px; 
+}
+
+/* Waktu di sisi kanan */
+.time {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: auto; 
+    text-align: right; 
+    flex: 1; 
+}
+
+/* Checkbox styling */
+.list-group-item.notification input[type="checkbox"] {
+    pointer-events: auto;
+    z-index: 1;
+    margin-right: 15px;
+}
+
+/* Link untuk notifikasi */
+.notification-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.notification-link:hover {
+    text-decoration: none;
+}
+
+/* Tombol hapus */
+.btn-red {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+    background-color: #bb0000;
+}
+
+.custom-btn {
+    background-color: rgb(221, 221, 221);
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 4px;
+    padding: 7px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    accent-color: black;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.custom-chevron {
+    color: black;
+    font-size: 1rem;
+}
+
+.search-icon {
+    cursor: pointer;
+}

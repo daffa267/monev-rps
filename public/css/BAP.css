@@ -1,0 +1,285 @@
+.bap-form-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.bap-form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.save-btn {
+  background-color: #00d323;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #00a81c;
+}
+
+#catatanReviewContainer {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  max-height: 200px; /* Set a max height for overflow */
+  overflow-y: auto;
+}
+
+.line-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.line-number {
+  width: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.line-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Atur posisi chevron pada dropdown */
+#mata-kuliah {
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"%3E%3Cpath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /%3E%3C/svg%3E'); /* Menggunakan chevron custom */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.7rem) center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+.menu-item.active-page,
+.submenu-item.active-submenu {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+  background-color: #ececec;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* Checklist Kelengkapan RPS */
+.toggle-checklist-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* daftar-bap */
+.table {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+.table th:nth-child(2) {
+  text-align: center;
+}
+
+.table td:nth-child(2) {
+  text-align: left;
+}
+
+.table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+  color: #495057;
+}
+
+.table td {
+  background-color: #ffffff;
+  padding: 7px;
+}
+
+.container {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  /* margin-top: -20px; */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.add-line-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-line-btn:hover {
+  background-color: #0056b3;
+}
+
+.line-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.line-number {
+  width: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.line-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.delete-line-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: background-color 0.3s ease;
+  height: 100%;
+}
+
+.delete-line-btn:hover {
+  background-color: #c82333;
+}
+
+#editBapModal .modal-dialog {
+  max-width: 50%;
+  width: auto;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+#daftarBapTable th:nth-child(6),
+#daftarBapTable td:nth-child(6) {
+  width: 200px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 5px;
+  color: inherit;
+}
+
+.view-btn:hover {
+  color: #007bff;
+}
+
+.edit-btn:hover {
+  color: #f0ad4e;
+}
+
+.download-btn:hover {
+  color: #28a745;
+}
+
+.delete-btn:hover {
+  color: #dc3545;
+}

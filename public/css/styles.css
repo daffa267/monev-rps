@@ -1,0 +1,353 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+    background-color: rgb(214, 214, 214);
+}
+
+.dashboard-container.sidebar-collapsed .admin-info {
+    left: 0; /* Membuat admin-info mulai dari tepi kiri jendela */
+    width: 100%; /* Lebar penuh */
+}
+
+.dashboard-container.sidebar-collapsed .main-content {
+    margin-left: 0; /* Menghapus margin kiri */
+    width: 100%; /* Lebar penuh */
+}
+
+.toggle-sidebar {
+    font-size: 1.5rem; /* Sesuaikan ukuran ikon */
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.sidebar-collapsed .sidebar {
+    transform: translateX(-250px); /* Sembunyikan sidebar */
+}
+
+.sidebar-collapsed .admin-info {
+    left: 0; /* Pindahkan admin-info ke ujung kiri jendela */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+}
+
+.sidebar-header-judul {
+    background-color: #4a9fff;
+    width: 105%; /* Lebar penuh mengikuti sidebar */
+    height: 61px; /* Tinggi yang sama dengan admin-info */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Rata tengah secara horizontal */
+    font-weight: bold;
+    border-bottom: 1px solid #ddd; 
+}
+
+.sidebar-header-judul p {
+    margin-top: 20px;
+    color: white;
+}
+
+.sidebar-header {
+    padding: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sidebar-header p{
+    font-size: 15px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: block;
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu a {
+    padding: 10px 30px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-item.active-page,
+.submenu-item.active-submenu {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px; 
+    background-color: #f6f6f6;
+    /* overflow: hidden; */
+}
+
+.submenu.show {
+    display: block;
+}
+
+.container-fluid {
+    padding-bottom: 0; 
+    margin-bottom: 0; 
+}
+
+.main-content {
+    margin-left: 250px;
+    margin-top: 40px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 89px);
+    transition: margin-left 0.3s ease;
+}
+
+.main-header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+    font-size: 1rem; 
+    margin: 0; 
+}
+
+.admin-info {
+    background-color: #4a9fff ;
+    position: fixed;
+    top: 0;
+    left: 250px; 
+    right: 0; 
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.admin-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.bi-person-fill {
+    color: white;
+    font-size: 30px;
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: white; /* Mengatur warna latar belakang kotak menjadi putih */
+    border: 1px solid #fdfdfd; /* Border halus di sekitar kotak */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan */
+}
+
+.card-body {
+    background-color: rgb(255, 255, 255); /* Mengatur warna latar belakang isi kotak menjadi putih */
+    padding: 20px; /* Tambahkan padding untuk memberi jarak pada konten */
+}
+
+.card-header {
+    background-color: #4a9fff; /* Warna biru untuk header */
+    color: white; /* Warna teks di header menjadi putih */
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+button.btn-primary.mt-2 {
+    width: 100%;
+}
+
+.feedback-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.menu-item:hover .feedback-icon {
+    filter: invert(100%);
+}
+
+.footer {
+    background-color: #4a9fff ;
+    color: #ffffff;             
+    text-align: center;       
+    padding: 5px 0;          
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd; 
+}
+/* Unsur RPS Section Styling */
+#unsurRps {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for visual depth */
+    margin-top: 20px;
+}
+
+/* Table Rows Alternating Colors */
+#unsurRps .table-bordered tr:nth-child(odd) {
+    background-color: #e6f7ff; /* Light blue for odd rows */
+}
+
+#unsurRps .table-bordered tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+/* Header Row Styling */
+#unsurRps .table-bordered thead th {
+    background-color: #4a9fff;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Styling for Radio Button Labels */
+input[type="radio"] + label {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active State Color for Checked Options */
+input[type="radio"]:checked + label {
+    background-color: #4a9fff;
+    color: #ffffff;
+    border-color: #4a9fff;
+}
+
+/* Hover Effect for Radio Labels */
+input[type="radio"] + label:hover {
+    background-color: #d1e9ff;
+    color: #333;
+    border-color: #4a9fff;
+}
+/* Data RPS Section Styling */
+#rps {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Table Styling */
+#rps .table-striped {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#rps .table-striped th, 
+#rps .table-striped td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Table Header Styling */
+#rps .table-striped thead th {
+    background-color: #4a9fff; /* Matches the blue theme */
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Alternating Row Colors */
+#rps .table-striped tbody tr:nth-child(odd) {
+    background-color: #e6f7ff; /* Light blue for odd rows */
+}
+
+#rps .table-striped tbody tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+/* Row Hover Effect */
+#rps .table-striped tbody tr:hover {
+    background-color: #d1e9ff;
+    transition: background-color 0.3s;
+}
+
+/* Action Button Styling */
+#rps .table-striped .action-button {
+    padding: 6px 12px;
+    background-color: #4a9fff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.9rem;
+}
+
+#rps .table-striped .action-button:hover {
+    background-color: #2b78d4;
+}

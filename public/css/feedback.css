@@ -1,0 +1,458 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  background-color: rgb(214, 214, 214);
+}
+
+.dashboard-container.sidebar-collapsed .admin-info {
+  left: 0; /* Membuat admin-info mulai dari tepi kiri jendela */
+  width: 100%; /* Lebar penuh */
+}
+
+.dashboard-container.sidebar-collapsed .main-content {
+  margin-left: 0; /* Menghapus margin kiri */
+  width: 100%; /* Lebar penuh */
+}
+
+.toggle-sidebar {
+  font-size: 1.5rem; /* Sesuaikan ukuran ikon */
+  cursor: pointer;
+  margin-right: 20px;
+  color: white;
+}
+
+.sidebar-collapsed .sidebar {
+  transform: translateX(-250px); /* Sembunyikan sidebar */
+}
+
+.sidebar-collapsed .admin-info {
+  left: 0; /* Pindahkan admin-info ke ujung kiri jendela */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header-judul {
+  background-color: #4a9fff;
+  width: 105%; /* Lebar penuh mengikuti sidebar */
+  height: 61px; /* Tinggi yang sama dengan admin-info */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Rata tengah secara horizontal */
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header-judul p {
+  margin-top: 20px;
+  color: white;
+}
+
+.sidebar-header {
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sidebar-header p {
+  font-size: 15px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item span {
+  padding-left: 10px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.submenu-item {
+  padding-left: 36px;
+  background-color: #eaeaea;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: block;
+  color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.dropdown-menu a {
+  padding: 10px 30px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.chevron-icon {
+  font-size: 0.6em;
+}
+
+.container-fluid {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.main-content {
+  margin-left: 250px;
+  margin-top: 40px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  min-height: calc(100vh - 89px);
+  transition: margin-left 0.3s ease;
+}
+
+.main-header {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-header h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.admin-info {
+  background-color: #4a9fff;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.admin-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.toggle-sidebar {
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.bi-person-fill {
+  color: white;
+  font-size: 30px;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notif {
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-body .form-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.menu-item.active-page,
+.submenu-item.active-submenu {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+  background-color: #ececec;
+  /* overflow: hidden; */
+}
+
+.submenu.show {
+  display: block;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: justify;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #c0c0c0;
+}
+
+.table th:nth-child(2) {
+  text-align: center;
+}
+
+.table td:nth-child(2) {
+  text-align: left;
+}
+
+.table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+  color: #495057;
+}
+
+.table td {
+  background-color: #ffffff;
+  padding: 7px;
+}
+
+.icon-revisi {
+  cursor: pointer;
+}
+
+#komentarContainer {
+  margin-top: 20px;
+}
+
+.status {
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  width: 100%;
+}
+
+.status.belum {
+  background-color: #dc3545;
+}
+.status.revisi {
+  background-color: #ffc107;
+}
+.status.selesai {
+  background-color: #28a745;
+}
+
+.belum-diperiksa {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.feedback-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.menu-item.active .feedback-icon {
+  filter: invert(100%);
+}
+
+.menu-item:hover .feedback-icon {
+  filter: invert(100%);
+}
+.footer {
+  background-color: #4a9fff;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.belum-diperiksa {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.status.sesuai {
+  background-color: #28a745;
+  color: white;
+}
+
+.status.revisi {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 100px;
+}
+
+.status-badge.belum-diperiksa {
+  background-color: #6c757d;
+  color: white;
+}
+
+.status-badge.sesuai {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-badge.revisi {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Styling untuk modal */
+.modal-body p {
+  margin: 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.modal-body h6 {
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+/* Styling untuk tombol lihat catatan */
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+/* Tambahkan loading indicator */
+.loading {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.loading:after {
+  content: "Loading...";
+  color: #6c757d;
+}

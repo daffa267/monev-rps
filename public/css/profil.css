@@ -1,0 +1,85 @@
+/* Main Profile Container */
+.profile-container {
+    margin-top: -95px;
+    width: 100%; 
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+/* Profile Content Layout */
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 0px);
+    transition: margin-left 0.3s ease;
+}
+
+/* Profile Form Layout */
+.profile-form {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual Form Group */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Form Labels */
+.profile-form label {
+    font-size: 14px;
+    color: #333;
+    width: 180px; /* Fixed width for alignment */
+}
+
+/* Form Inputs */
+.profile-form input,
+.profile-form select {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Save Button */
+.profile-form button {
+    margin-top: 20px;
+    align-self: flex-end;
+    width: 100px;
+    padding: 8px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.profile-form button:hover {
+    background-color: #218838;
+}
+
+/* Profile Image Style */
+.profile-image {
+    width: 100px;
+    height: 94px; 
+    display: flex;
+    border-radius: 80px;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+    margin-right: 10px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    font-size: 100px;
+    color: #ccc;
+}
